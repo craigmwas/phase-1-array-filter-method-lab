@@ -1,7 +1,13 @@
 require ( './helpers.js' );
 
-const sinon = require( 'sinon' )
+function findMatching(drivers, name) {
+  return drivers.filter(function (driver) {
+    return drivers.filter(driver => driver.toLowerCase === name.toLowerCase());
+  });
+}
 
+
+const sinon = require( 'sinon' )
 describe('index.js', function () {
   describe('findMatching()', function () {
     it('returns all drivers that match the passed in name', function () {
